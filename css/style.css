@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Young+Serif&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+/* || RESET */
+
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block; 
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/*|| VARIABLES */
+
+:root {
+    /* FONTS*/
+
+    --HEADINGS-FF: "Young Serif", sans-serif;
+    --P-TEXT-FF: "Outfit", sans-serif;
+
+    /* COLORS */
+    --CARD-BG-White: hsl(0, 0%, 100%);
+    --BODY-BG-Stone-100: hsl(30, 54%, 90%);
+    --TB-line-Stone-150: hsl(30, 18%, 87%);
+    --P-CLR-Stone-600: hsl(30, 10%, 34%);
+    --H1-Stone-900: hsl(24, 5%, 18%);
+    --H2-Brown-800: hsl(14, 45%, 36%);
+
+    --Prep-Text-Rose-800: hsl(332, 51%, 32%);
+    --Prep-BG-Rose-50: hsl(330, 100%, 98%);
+}
+
+
+/* GENERAL STYLES */
+
+body {
+    min-height: 100svh;
+    max-width: 736px;
+    margin: 8rem auto;
+    background-color: var(--BODY-BG-Stone-100);
+}
+
+.image {
+    position: relative;
+}
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+h1, h2 {
+    font-family: var(--HEADINGS-FF);
+}
+
+h2 {
+    color: var(--H2-Brown-800);
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.text, th {
+    font-family: var(--P-TEXT-FF);
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--P-CLR-Stone-600);
+    line-height: 150%;
+}
+
+td {
+    color: var(--H2-Brown-800);
+    font-size: 1rem;
+    font-family: var(--P-TEXT-FF);
+} 
+
+hr {
+    background-color: var(--TB-line-Stone-150); 
+    opacity: 15%;
+}
+
+ul, ol {
+    margin-left: 1.2em;  
+  }
+
+.prep__ul li::marker {
+    color: var(--Prep-Text-Rose-800);
+    font-size: 0.75rem;
+}
+
+.ingred__ul li::marker {
+    color: var(--H2-Brown-800);
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+.instr__ol li::marker {
+    color: var(--H2-Brown-800);
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: var(--P-TEXT-FF);
+}
+
+.prep__ul > * {
+    padding: 0.17em 1.4em;
+}
+
+.ingred__ul > * {
+    padding: 0.2em 1.5em ;
+}
+
+.instr__ol > * {
+    padding: 0.2em 1em;
+} 
+ 
+
+  /* COMPONENTS */
+
+.wrapper {
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: auto;
+}
+
+.card {
+    background-color: var(--CARD-BG-White);
+    padding: 2.5em;
+    border-radius: 24px;
+    display:flex;
+    flex-flow: column wrap;
+    gap: 30px;
+}
+
+.nutrition {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 14px;
+}
+
+.h1__intro {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--H1-Stone-900);
+    line-height: 150%;
+    padding-bottom: 0.2em;
+}
+
+.h2__prep {
+    font-family: var(--P-TEXT-FF);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--Prep-Text-Rose-800);
+    line-height: 150%;
+    padding-bottom: 0.3em;
+}
+
+.prep__time {
+    background-color: var(--Prep-BG-Rose-50);
+    border-radius: 12px;
+    padding: 1.3em;
+}
+
+.h2__ingred, .h2__instr {
+    padding-bottom: 0.57em;
+}
+
+table {
+    line-height: 2.8em;    
+}
+
+th, td {
+    border-bottom: 1px solid var(--TB-line-Stone-150);
+    
+}
+
+ .noborder {
+    border-bottom: none;
+    line-height: 0;
+    padding-top: 1.7em;
+ }
+
+th {
+    text-align: left;
+    padding-left: 2em;
+}
+
+/* || FOOTER */
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+    padding: 0.5em;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* MOBILE */
+
+@media (width <= 630px) {
+    body {
+        margin: 0;
+        background-color: white;
+    }
+
+    .card {
+        padding: 0;
+        padding-bottom: 3em;
+        border-radius: 0;
+    }
+
+    section, hr {
+        margin-inline: 2em;
+    }
+    
+
+    .h1__intro  {
+        line-height: 100%;
+        font-size: 2.3rem;
+        padding-top: 0.4em;
+        padding-bottom: 0.7em;
+    }
+
+    img {
+        border-radius: 0;
+    }
+}
